@@ -1,0 +1,18 @@
+h3{
+    border: 0.5px dotted grey;
+    height: 50px;
+    padding-top: 2.5%;
+    padding-left: 2.5%;
+}
+
+h3:hover{
+    background-color: rgb(36, 36, 36);
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.selected{
+    background-color: rgb(97, 144, 185);
+    color: aliceblue;
+
+}

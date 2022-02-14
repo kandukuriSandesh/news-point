@@ -1,0 +1,21 @@
+.box{
+    display: grid;
+    grid-template-columns: auto auto auto ;
+   grid-gap: 50px;
+   grid-template-rows: auto auto auto ;
+    /* justify-content: space-around; */
+    /* align-items: flex-end; */
+    /* grid-auto-rows: 400px; */
+    align-items:flex-start;
+    
+}
+
+.heading{
+    width: 70%;
+   border: 1px rgb(92, 93, 105) solid ;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: rgb(92, 93, 105);
+    color: azure;
+
+}

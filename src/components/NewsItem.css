@@ -1,0 +1,10 @@
+.gri-item{
+    
+   
+    display: flex;
+    flex-direction: column;
+    justify-content:last baseline;
+   
+   
+    
+}
