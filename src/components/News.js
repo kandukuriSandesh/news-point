@@ -9,6 +9,7 @@ export default function News(props) {
   const [articles, setArticles] = useState([]);
   const [partArticles, setpartArticles] = useState([]);
   const [link, setLink] = useState(props.source);
+  const [dot, setDot] = useState(".")
  
   //https://newsapi.org/v2/top-headlines?sources=${this.state.sources}&apiKey=${this.state.apiKey}
 
@@ -17,7 +18,16 @@ export default function News(props) {
     .then( req => req.json()).
     then(r => {setArticles(r.articles); return r  })
     .then(res => setpartArticles(res.articles.slice(0,8)))
-  
+    const key = setInterval(() => {
+      setDot(state => state + ".")
+      console.log(dot)
+    }, 1000);
+       
+     setTimeout(() => {
+      props.toggleLoading(false);
+      clearInterval(key);
+     }, 3000);
+     
    },[])
 
 
@@ -32,11 +42,11 @@ export default function News(props) {
   }
    
   
- 
+ console.log(props.loading)
     
      return (
 
-     <div  style={{marginLeft:"16%"}}>
+   props.loading ?  <h1>Loading{dot}</h1> : <div  style={{marginLeft:"16%"}}>
       <div className=" my-3" style={{width:"85%"}} >
        
           <h1 className="heading" >{`Here is Top ${props.heading} News`}</h1>

@@ -16,7 +16,8 @@ class App extends React.Component{
       status:"Owner",
       givenName:"",
       source:`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=1d5752dee9dc4b4da874bcd80891c6b4`,
-      include:""
+      include:"",
+      loading:true
     }
   }
  componentDidMount(){
@@ -30,7 +31,13 @@ class App extends React.Component{
 
  getAndInvoke =(url,name) => {
   this.setState((state) => ({...state,source:url,name:name}));
+  this.setState({loading:true});
+
   
+}
+
+toggleLoading= (value) => {
+    this.setState({loading:value})
 }
 
 searchFunc = async (value) => {
@@ -43,7 +50,7 @@ searchFunc = async (value) => {
       <>
      <NavBar searchFunc = {this.searchFunc} />
      <SideBar getAndInvoke={this.getAndInvoke} active={this.state.name.toLowerCase()}  />
-     <News key={this.state.source} source={this.state.source} heading={this.state.name} include={this.state.include} />
+     <News key={this.state.source} toggleLoading={this.toggleLoading} source={this.state.source} heading={this.state.name} include={this.state.include} loading = {this.state.loading} />
      
     
       </>
