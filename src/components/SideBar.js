@@ -7,11 +7,13 @@ export default function SideBar(props) {
     <div className='my-3 SideBar' style={{width:"15%",height:"100%",float:"left"}}>
       
         <h1 style={{textAlign:"center"}} ><span className="badge badge-secondary" style={{backgroundColor:"blue",color:"white"}} >News Topics</span></h1>
-        <h3 onClick={()=> props.getAndInvoke(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=0555e1b3499d447187d5e0d7c048c974`,"Technology")} className={props.active==="technology"?"selected":""} >Technology </h3>
-        <h3 onClick={()=> props.getAndInvoke(`https://newsapi.org/v2/everything?q=health&sortBy=publishedAt&apiKey=0555e1b3499d447187d5e0d7c048c974`,"health")}  className={props.active==="tesla"?"selected":""} >Health</h3>
-        <h3 onClick={()=> props.getAndInvoke(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=0555e1b3499d447187d5e0d7c048c974`,"business")}  className={props.active==="business"?"selected":""}>Business</h3>
+        <h3 onClick={()=> props.getAndInvoke(`https://newsdata.io/api/1/latest?apikey=pub_540957621ed02d46dc48df0806ef9405e4e88`,"Latest")} className={props.active==="Latest"?"selected":""} > Latest News </h3>
+        <h3 onClick={()=> props.getAndInvoke(`https://newsdata.io/api/1/latest?apikey=pub_540957621ed02d46dc48df0806ef9405e4e88&q=social`,"Social")}  className={props.active==="Social"?"selected":""} >Social News</h3>
+        <h3 onClick={()=> props.getAndInvoke(`https://newsdata.io/api/1/latest?apikey=pub_540957621ed02d46dc48df0806ef9405e4e88&category=science`,"Science")}  className={props.active==="Science"?"selected":""}>Science</h3>
+        <h3 onClick={()=> props.getAndInvoke(`https://newsdata.io/api/1/latest?apikey=pub_540957621ed02d46dc48df0806ef9405e4e88&q=business`,"Business")}  className={props.active==="Business"?"selected":""}>Business</h3>
+
         
-        <h3 onClick={()=> props.getAndInvoke(`https://newsapi.org/v2/everything?domains=wsj.com&apiKey=0555e1b3499d447187d5e0d7c048c974`,"general")} className={props.active==="random"?"selected":""} > Random News </h3>
+        <h3 onClick={()=> props.getAndInvoke(`https://newsdata.io/api/1/sources?apikey=pub_540957621ed02d46dc48df0806ef9405e4e88`,"News Source")} className={props.active==="News Source"?"selected":""} > News Source </h3>
 
     </div>
   )

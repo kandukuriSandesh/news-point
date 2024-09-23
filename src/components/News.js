@@ -18,8 +18,8 @@ export default function News(props) {
   useEffect (  () => {
    fetch(link)
     .then( req => req.json())
-    .then(r => { console.log(r);setArticles(r.articles); return r  })
-    .then(res => setpartArticles(res.articles.slice(0,8)))
+    .then(r => { console.log(r);setArticles(r.results); return r  })
+    .then(res => setpartArticles(res.results.slice(0,8)))
     const key = setInterval(() => {
       setDot(state => state + ".")
       console.log(dot)
@@ -53,7 +53,7 @@ export default function News(props) {
        
           <h1 className="heading" >{`Here is Top ${props.heading} News`}</h1>
           <div className="box ">
-           {partArticles?partArticles.filter((ele) => ele.title.includes(props.include)).map((ele,index) => { if(index < 8) { return <NewsItem key={ele.url} urlToImage = {ele.urlToImage} title = {ele.title} publishedAt={ele.publishedAt} url = {ele.url} />}}):""}
+           {partArticles?partArticles.filter((ele) => ele.title.includes(props.include)).map((ele,index) => { if(index < 8) { return <NewsItem key={ele.article_id} urlToImage = {ele.image_url} title = {ele.title} publishedAt={ele.pubDate} url = {ele.link} />}}):""}
            
           </div>
           <Pagination data = {articles} partHandler={partHandler} />

@@ -12,10 +12,10 @@ class App extends React.Component{
   constructor(){
     super();
     this.state ={
-      name:"Technology",
+      name:"Latest",
       status:"Owner",
       givenName:"",
-      source:`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=0555e1b3499d447187d5e0d7c048c974`,
+      source:`https://newsdata.io/api/1/latest?apikey=pub_540957621ed02d46dc48df0806ef9405e4e88`,
       include:"",
       loading:true
     }
