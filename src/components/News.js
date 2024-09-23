@@ -13,10 +13,12 @@ export default function News(props) {
  
   //https://newsapi.org/v2/top-headlines?sources=${this.state.sources}&apiKey=${this.state.apiKey}
 
+  console.log({link})
+
   useEffect (  () => {
    fetch(link)
-    .then( req => req.json()).
-    then(r => {setArticles(r.articles); return r  })
+    .then( req => req.json())
+    .then(r => { console.log(r);setArticles(r.articles); return r  })
     .then(res => setpartArticles(res.articles.slice(0,8)))
     const key = setInterval(() => {
       setDot(state => state + ".")

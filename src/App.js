@@ -15,7 +15,7 @@ class App extends React.Component{
       name:"Technology",
       status:"Owner",
       givenName:"",
-      source:`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=1d5752dee9dc4b4da874bcd80891c6b4`,
+      source:`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=0555e1b3499d447187d5e0d7c048c974`,
       include:"",
       loading:true
     }

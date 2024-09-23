@@ -1,8 +1,9 @@
 import React from 'react'
 
 export default function Pagination(props) {
+    console.log(props)
     let pageNumber = [];
-    for(let i = 1;i< Math.ceil((props.data.length/8)+1);i++){
+    for(let i = 1;i< Math.ceil((props?.data.length/8)+1);i++){
       pageNumber.push(i);
 
     }
